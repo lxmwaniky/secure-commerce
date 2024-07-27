@@ -1,59 +1,84 @@
-# `secure-commerce`
+# SecureCommerce: Enhancing Security for Embedded Finance in E-Commerce Platforms
 
-Welcome to your new `secure-commerce` project and to the Internet Computer development community. By default, creating a new project adds this README and some template files to your project directory. You can edit these template files to customize your project and to include your own code to speed up the development cycle.
+## Project Overview
 
-To get started, you might want to explore the project directory structure and the default configuration file. Working with this project in your development environment will not affect any production deployment or identity tokens.
+**SecureCommerce** is a cutting-edge solution aimed at enhancing the security of embedded finance in e-commerce platforms. As e-commerce platforms increasingly adopt embedded finance solutions like LipaLater, they face significant risks such as fraudulent charges, hacking, and other cybercrimes. SecureCommerce leverages blockchain technology, smart contracts, and the Internet Computer Protocol (ICP) to mitigate these risks, ensuring secure, transparent, and efficient transactions.
 
-To learn more before you start working with `secure-commerce`, see the following documentation available online:
+## Problem Statement
 
-- [Quick Start](https://internetcomputer.org/docs/current/developer-docs/setup/deploy-locally)
-- [SDK Developer Tools](https://internetcomputer.org/docs/current/developer-docs/setup/install)
-- [Motoko Programming Language Guide](https://internetcomputer.org/docs/current/motoko/main/motoko)
-- [Motoko Language Quick Reference](https://internetcomputer.org/docs/current/motoko/main/language-manual)
+E-commerce platforms are integrating financial services to enhance customer convenience and drive sales. However, this integration introduces vulnerabilities that can undermine customer trust and financial stability. Addressing these security concerns is crucial for the success of embedded finance solutions.
 
-If you want to start working on your project right away, you might want to try the following commands:
+## Solution Plan
 
-```bash
-cd secure-commerce/
-dfx help
-dfx canister --help
+To tackle the security challenges in embedded finance, SecureCommerce proposes the following measures:
+1. **Immutable Ledger**: Utilizing blockchain to create an immutable ledger for all transactions, ensuring transparency and traceability.
+2. **Decentralized Storage**: Enhancing data security through decentralized storage, making it difficult for hackers to compromise the system.
+3. **Smart Contracts**: Implementing smart contracts to automate financial agreements, reducing human error and fraud.
+4. **Compliance and Enforcement**: Ensuring compliance with financial agreements by executing actions only when specific conditions are met.
+5. **ICP Infrastructure**: Building on ICP for secure, scalable, and efficient application management of embedded finance.
+6. **ICP Security Features**: Leveraging ICP's security features to protect against unauthorized access and cyber threats.
+
+## Key Features
+- **Blockchain Integration**: Secure and transparent transaction records.
+- **Smart Contracts**: Automated and tamper-proof financial agreements.
+- **Decentralized Storage**: Enhanced data security.
+- **ICP Deployment**: High scalability and low latency.
+- **Compliance and Security**: Robust measures to prevent fraud and ensure compliance.
+
+## Project Setup
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/)
+- [DFINITY SDK](https://sdk.dfinity.org/)
+- React
+- Motoko
+
+### Installation
+
+1. Clone the repository
+   ```sh
+   git clone https://github.com/lxmwaniky/secure-commerce.git
+2. Navigate to the project directory
+   ```sh
+   cd secure-commerce
+3. Install dependencies
+   ```sh
+    npm install
+4. Start DFINTY Canister
+   ```sh
+    dfx start --background --clean
+5. Deploy the project
+   ```sh
+    dfx deploy
+6. To stop the DFINTY Canister
+   ```sh
+    dfx stop 
+
+## Project Structure
+
+The project is structured as follows:
+
 ```
-
-## Running the project locally
-
-If you want to test your project locally, you can use the following commands:
-
-```bash
-# Starts the replica, running in the background
-dfx start --background
-
-# Deploys your canisters to the replica and generates your candid interface
-dfx deploy
-```
-
-Once the job completes, your application will be available at `http://localhost:4943?canisterId={asset_canister_id}`.
-
-If you have made changes to your backend canister, you can generate a new candid interface with
-
-```bash
-npm run generate
-```
-
-at any time. This is recommended before starting the frontend development server, and will be run automatically any time you run `dfx deploy`.
-
-If you are making frontend changes, you can start a development server with
-
-```bash
-npm start
-```
-
-Which will start a server at `http://localhost:8080`, proxying API requests to the replica at port 4943.
-
-### Note on frontend environment variables
-
-If you are hosting frontend code somewhere without using DFX, you may need to make one of the following adjustments to ensure your project does not fetch the root key in production:
-
-- set`DFX_NETWORK` to `ic` if you are using Webpack
-- use your own preferred method to replace `process.env.DFX_NETWORK` in the autogenerated declarations
-  - Setting `canisters -> {asset_canister_id} -> declarations -> env_override to a string` in `dfx.json` will replace `process.env.DFX_NETWORK` with the string in the autogenerated declarations
-- Write your own `createActor` constructor
+secure-commerce
+├── dfx.json
+├── package.json
+├── package-lock.json
+├── README.md
+├── src
+│   ├── secure-commerce-backend
+│   │   └── main.mo
+│   └── secure-commerce-frontend
+│       ├── index.html
+│       ├── package.json
+│       ├── public
+│       │   ├── favicon.ico
+│       │   └── logo2.svg
+│       ├── src
+│       │   ├── App.jsx
+│       │   ├── index.scss
+│       │   ├── main.jsx
+│       │   └── vite-env.d.ts
+│       ├── tsconfig.json
+│       └── vite.config.js
+└── tsconfig.json

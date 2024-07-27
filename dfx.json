@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "secure-commerce-backend": {
+      "main": "src/secure-commerce-backend/main.mo",
+      "type": "motoko"
+    },
+    "secure-commerce-frontend": {
+      "dependencies": [
+        "secure-commerce-backend"
+      ],
+      "source": [
+        "src/secure-commerce-frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "secure-commerce-frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
